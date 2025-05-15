@@ -3,7 +3,6 @@ package com.flappy;
 public class Main implements Runnable {
     public Window window;
 
-
     public static void main(String[] args) {
         new Main().run();
     }
