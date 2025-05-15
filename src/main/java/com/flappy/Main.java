@@ -10,6 +10,9 @@ public class Main implements Runnable {
     @Override
     public void run() {
         window = new Window(800, 600, "Flappy Bird");
+
+//        int shader = ShaderUtils.load("shaders/shader.vert", "shaders/shader.frag");
+
         window.init();
 
         while (!window.shouldClose()) {
