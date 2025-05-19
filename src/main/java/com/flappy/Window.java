@@ -36,6 +36,11 @@ public class Window {
         glfwSetErrorCallback(null).free();
     }
 
+    public void render() {
+        glClear(GL_COLOR_BUFFER_BIT);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+    }
+
     public void init() {
         // Setup an error callback. The default implementation
         // will print the error message in System.err.
