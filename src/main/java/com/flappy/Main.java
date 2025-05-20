@@ -4,6 +4,7 @@ import com.flappy.util.ShaderUtils;
 
 import static org.lwjgl.opengl.GL30.glBindVertexArray;
 import static org.lwjgl.opengl.GL30.glGenVertexArrays;
+import static org.lwjgl.opengl.GL20.glUseProgram;
 
 public class Main implements Runnable {
     public Window window;
@@ -16,14 +17,12 @@ public class Main implements Runnable {
     public void run() {
         window = new Window(800, 600, "Flappy Bird");
 
-//        int shader = ShaderUtils.load("shaders/shader.vert", "shaders/shader.frag");
-
         window.init();
         //Vertex array object
         int vao = glGenVertexArrays();
         glBindVertexArray(vao);
 
-        int shader = ShaderUtils.load("shaders/shader.vert", "shaders/shader.frag");
+        int shader = ShaderUtils.load("src/shaders/shader.vert", "src/shaders/shader.frag");
         glUseProgram(shader);
 
         while (!window.shouldClose()) {
